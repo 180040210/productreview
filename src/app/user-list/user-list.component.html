@@ -1,0 +1,32 @@
+
+<div class="table-users">
+    <div class="header">User List</div>
+    <div class="search-p">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search category" >
+    </div>
+      <table cellspacing="0">
+        <thead>
+       <tr>
+        <th width=100 scope="col" [appSort]="user" data-order="desc" data-name="hostId"> hostId </th>
+        <th width=100 scope="col" [appSort]="user" data-order="desc" data-name="email"> email</th>
+        <th width=100 scope="col" [appSort]="user" data-order="desc" data-name="userName"> userName</th>
+        <!-- <th width=100 scope="col" [appSort]="user" data-order="desc" data-name="password"> password</th> -->
+       </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let p of user | filter:searchText | paginate:{
+                itemsPerPage:7,
+                currentPage:p} " >
+          
+                <td> {{ p.hostId }} </td>
+                <td> {{ p.email }} </td>
+                <td> {{ p.userName }} </td>
+                <!-- <td> {{ p.password }} </td> -->
+                <!-- <td> {{ p.approve }} </td> -->
+            </tr>
+
+        </tbody>
+       
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+ </div>

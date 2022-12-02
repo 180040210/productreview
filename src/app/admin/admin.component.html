@@ -1,0 +1,64 @@
+
+<div class="table-users">
+    <div class="header">Product List</div>
+    <div class="search-p">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search category" >
+    </div>
+      <table cellspacing="0">
+        <thead>
+       <tr>
+        <th>Image</th>
+        <th width=100 scope="col" [appSort]="product" data-order="desc" data-name="productId"> productId </th>
+        <th width=100 scope="col" [appSort]="product" data-order="desc" data-name="productName"> productName</th>
+        <th width=100 scope="col" [appSort]="product" data-order="desc" data-name="productPrice"> productPrice</th>
+        <th width=100 scope="col" [appSort]="product" data-order="desc" data-name="category"> category</th>
+
+        <th> Actions </th>
+       </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let p of product | filter:searchText | paginate:{
+                itemsPerPage:7,
+                currentPage:p} " >
+                <td><img [src]="p.productUrl" class="images"></td>
+                <td> {{ p.productId }} </td>
+                <td> {{ p.productName }} </td>
+                <td> {{ p.productPrice }} </td>
+                <td> {{ p.category }} </td>
+                
+                
+                
+            
+                
+
+                <td>
+                    <div class="container">
+                         Add
+                        <span class="glyphicon glyphicon-comment"  (click) = "addFeedback(p.productId)"></span>
+                        &nbsp;
+                         <!-- Delete
+                        <span class="glyphicon glyphicon-trash"  (click) = "deleteProduct(p.productId)"></span>
+                        &nbsp; -->
+                         <!-- Edit
+                        <span class="glyphicon glyphicon-edit"  (click) = "updateproduct(p.productId)"></span>
+                        &nbsp; -->
+                        
+                        View
+                        <span class="	glyphicon glyphicon-eye-open"  (click) = "getFeedBackByProductId(p.productId)"></span>
+                        &nbsp;
+
+                        Avg Rating
+                        <span class="	glyphicon glyphicon-star"  (click) = "avgRating(p.productId)"></span>
+                        &nbsp;
+
+            
+
+                      </div>
+                </td>
+
+
+        </tbody>
+       
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+ </div>

@@ -1,0 +1,55 @@
+<!-- <div class="container"></div> -->
+<div class="col-md-6 offset-md-3 container" >
+    
+    <h3> Create Product </h3>
+    <form #form="ngForm" (ngSubmit) = "onSubmit()" >
+        <!-- <form #loginform= "ngForm" (ngSubmit)="loginUser()"> -->
+
+        
+        <!-- <div class="form-group">
+            <label> Product ID</label>
+            <input type="number" required #name ="ngModel" name="name" class ="form-control" id = "productId"
+                [(ngModel)] = "product.productId" name = "productId">
+                <span *ngIf="name.invalid && name.touched" style="color: red">Please enter Valid input</span>
+        </div> -->
+    
+        <div class="form-group">
+            <label> Product Name</label>
+            <input type="text" required #products ="ngModel" products="name"class ="form-control" id = "productName"
+                [(ngModel)] = "product.productName" name = "productName">
+                
+                <span *ngIf="products.invalid && products.touched" style="color: red">Please enter Valid input</span>
+
+        </div>
+    
+        <div class="form-group" >
+            <label> Product Price</label>
+            <input type="number" required #price ="ngModel" price="name" class ="form-control" id = "productPrice"
+                [(ngModel)] = "product.productPrice" name = "productPrice">
+                <span *ngIf="price.invalid && price.touched" style="color: red">Please enter Valid input</span>
+        </div>
+    
+        <div class="form-group">
+            <label>Category</label>
+            <input type="text" required #cate ="ngModel" cate="name"class ="form-control" id = "category"
+                [(ngModel)] = "product.category" name = "category">
+                <span *ngIf="cate.invalid && cate.touched" style="color: red">Please enter Valid input</span>
+        </div>
+        <!-- <div class="form-group row">
+            <label for="seller"class="col-form-label col-sm-2">Seller</label>
+            <select [(ngModel)]="product.seller" class="form-control" name="sellerId">
+                <option>----Select----</option>
+                <option *ngFor="let s of seller" [ngValue]="seller">{{s.sellerId}}</option>
+            </select>
+        </div> -->
+        <div class="form-group">
+            <label>Image</label>
+            <input type="text" required #cateer ="ngModel" cateer="name"class ="form-control" id = "productUrl"
+                [(ngModel)] = "product.productUrl" name = "productUrl">
+                <span *ngIf="cateer.invalid && cateer.touched" style="color: red">Please enter Valid input</span>
+        </div>
+       
+        <button [disabled]="form.invalid" class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 

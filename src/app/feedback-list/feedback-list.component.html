@@ -1,0 +1,41 @@
+
+        <div class="row">
+            <div class="search-p">
+                <h2>Feed Back Details</h2><br>
+               
+              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search category" >
+            </div>
+        <div class="container">
+        <table class = "table table-striped">
+            <thead>
+        
+                <tr>
+                    
+                    <th width=100 scope="col" [appSort]="feedback" data-order="desc" data-name="feedbackId"> FeedBackId </th>
+                    <th width=100 scope="col" [appSort]="feedback" data-order="desc" data-name="rating"> Rating</th>
+                    <th width=100 scope="col" [appSort]="feedback" data-order="desc" data-name="feedback"> FeedBack</th>
+                    <th>Actions</th>
+                
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor = "let p of feedback | filter:searchText | paginate:{
+                    itemsPerPage:5,
+                    currentPage:p} ">
+                   
+                    <td> {{ p.feedbackId }} </td>
+                    <td> {{ p.rating }} </td>
+                    <td> {{ p.feedback }} </td>
+                    Edit
+                        <span class="glyphicon glyphicon-edit"  (click) = "updatefeedback(p.feedbackId)"></span>
+                        Delete
+                        <span class="glyphicon glyphicon-trash"  (click) = "deleteFeedback(p.feedbackId)"></span>
+                
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      
+        

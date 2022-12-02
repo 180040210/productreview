@@ -1,0 +1,40 @@
+<html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Document</title>
+ </head>
+ <body>
+   <nav class="navbar">
+     <div class="logo">Product Review</div>
+     <ul class="nav-links">
+     
+       <div class="menu">
+         <li>Home</li>
+       
+       
+         <li> <a routerLink="feedback-details" routerLinkActive="active" class="nav-link" >Feedback-details</a></li>
+        
+         <li> <a routerLink="feedback-list" routerLinkActive="active" class="nav-link" >FeedBack List</a></li>
+         <li class="services">
+          <a href="/">Services</a>
+          <ul class="dropdown">
+            <li><a routerLink="product-list" routerLinkActive="active" class="nav-link" >Product List</a></li>
+            <li><a routerLink="create-product" routerLinkActive="active" class="nav-link" >Add Product</a></li>
+            <li><a routerLink="create-feedback" routerLinkActive="active" class="nav-link" >Add Feedback</a></li>
+            <li><a routerLink="registration" routerLinkActive="active" class="nav-link" >Register User</a></li>
+            <li><a routerLink="user-list" routerLinkActive="active" class="nav-link" >User List</a></li>
+           </ul>
+        </li>
+       </div>
+     </ul>
+    </nav>
+ </body>
+</html>
+<footer class = "footer">
+  <div class = "container">
+      <span>Product Review Application </span>
+  </div>
+</footer>
+<router-outlet></router-outlet>

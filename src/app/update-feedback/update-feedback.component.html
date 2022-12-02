@@ -1,0 +1,32 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update FeedBack</h3>
+    <form (ngSubmit) = "onSubmit()">
+        
+        <!-- <div class="form-group">
+            <label> FeedBack ID</label>
+            <input type="number" class ="form-control" id = "feedbackId"
+                [(ngModel)] = "feedback.feedbackId" name = "feedbackId">
+        </div> -->
+    
+        <div class="form-group">
+            <label> Rating</label>
+            <input type="number" class ="form-control" id = "rating"
+                [(ngModel)] = "feedback.rating" name = "rating">
+        </div>
+    
+        <div class="form-group">
+            <label> FeedBack</label>
+            <input type="text" class ="form-control" id = "feedback"
+                [(ngModel)] = "feedback.feedback" name = "feedback">
+        </div>
+    
+        <!-- <div class="form-group">
+            <label> Avg Rating</label>
+            <input type="number" class ="form-control" id = "avgRating"
+                [(ngModel)] = "feedback.avgRating" name = "avgRating">
+        </div> -->
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 

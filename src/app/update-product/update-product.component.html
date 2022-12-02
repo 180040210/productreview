@@ -1,0 +1,48 @@
+<!-- <p>update-product works!</p> -->
+<div class="col-md-6 offset-md-3">
+    <h3> Update Product </h3>
+    <form (ngSubmit) = "onSubmit()">
+        
+        <div class="form-group">
+            <label> Product ID</label>
+            <input type="number" class ="form-control" id = "productId"
+                [(ngModel)] = "product.productId" name = "productId">
+        </div>
+    
+        <div class="form-group">
+            <label> Product Name</label>
+            <input type="text" class ="form-control" id = "productName"
+                [(ngModel)] = "product.productName" name = "productName">
+        </div>
+    
+        <div class="form-group">
+            <label> Product Price</label>
+            <input type="number" class ="form-control" id = "productPrice"
+                [(ngModel)] = "product.productPrice" name = "productPrice">
+        </div>
+    
+        <div class="form-group">
+            <label>Category</label>
+            <input type="text" class ="form-control" id = "category"
+                [(ngModel)] = "product.category" name = "category">
+        </div>
+        <div class="form-group">
+            <label>Image</label>
+            <input type="text" required #cateer ="ngModel" cateer="name"class ="form-control" id = "productUrl"
+                [(ngModel)] = "product.productUrl" name = "productUrl">
+                <span *ngIf="cateer.invalid && cateer.touched" style="color: red">Please enter Valid input</span>
+        </div>
+        <!-- <div class="form-group">
+            <label>Approve</label>
+            <input type="radio" class ="form-control" id = "approve"
+                [(ngModel)] = "product.approve" name = "approve">
+                <input type="radio" id="true" name="fav_language" value="true">
+    <label for="true">true</label><br>
+    <input type="radio" id="False" name="fav_language" value="False">
+    <label for="False">false</label><br>
+        </div> -->
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 
